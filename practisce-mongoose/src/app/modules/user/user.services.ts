@@ -1,8 +1,8 @@
 import User from "./user.model";
 
-const userModelToDb = async () => {
-  const user = new User({
-    id: "43343",
+export const createUserToDb = async () => {
+  const user = await new User({
+    id: "433004003",
     role: "student",
     name: {
       firstName: "Mohammad",
@@ -18,6 +18,6 @@ const userModelToDb = async () => {
     permanentAddress: "Bangladesh",
   });
   await user.save();
-  console.log(user);
+  // console.log(user);
+  return user;
 };
-userModelToDb();

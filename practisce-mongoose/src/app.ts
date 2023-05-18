@@ -1,7 +1,6 @@
-import express, { Application, Response, Request, NextFunction } from "express";
+import express, { Application } from "express";
 import cors from "cors";
-import { Schema, model } from "mongoose";
-import { strict } from "assert";
+import userRoute from "./app/modules/user/user.route";
 
 const app: Application = express();
 
@@ -12,23 +11,21 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // to parse any type data.
 
-app.get("/", (req: Request, res: Response, next: NextFunction) => {
-  // res.send("Hello World!");
-  /*
+app.use("/api/v1/user", userRoute);
+
+export default app;
+
+// res.send("Hello World!");
+/*
   step1: interface
   step2: Schema
   step3: model
   step4: database query on Model
   */
-  // creating an interface
+// creating an interface
 
-  // creating schema using interface
-  // developers will be responsible for checking required or not.
-
- 
-});
-
-export default app;
+// creating schema using interface
+// developers will be responsible for checking required or not.
 
 /*
 Pattern MVC, Modular
